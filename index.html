@@ -11,7 +11,11 @@
         <h1>RAPIDEZ OCULAR</h1>
         <p class="instruction">En este ejercicio, verás tres columnas con una serie de palabras. El objetivo es seguir el recorrido visual de arriba hacia abajo por cada palabra, mientras el contador va disminuyendo.</p>
         <p class="instruction">Recuerda que debes mantener la cabeza quieta y solo mover los ojos.</p>
-        <button id="startButton">Iniciar</button>
+        <div id="containerInputButton" class="container-input-button">
+            <label for="speedInput">Velocidad del Recorrido (ms):</label>
+            <input type="number" id="speedInput" value="90" min="10" max="500" step="10">
+            <button id="startButton">Iniciar</button>
+        </div>
         <div id="timer"></div>
         <div id="columns" class="hidden">
             <div class="column" id="column1"></div>
