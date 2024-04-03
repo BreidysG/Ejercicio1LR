@@ -1,7 +1,8 @@
 document.getElementById('startButton').addEventListener('click', function() {
     startExercise();
 });
-let columnshtml = document.getElementById("columns")
+
+let columnshtml = document.getElementById("columns");
 var visualInterval;
 var timerInterval;
 var column1Words, column2Words, column3Words;
@@ -21,15 +22,20 @@ function startExercise() {
     }
     // Ocultar botón de inicio
     document.getElementById('startButton').style.display = 'none';
+    document.getElementById('containerInputButton').style.display = 'none';
     columnshtml.classList.remove("hidden");
     
     columnshtml.style.display = "flex";
-     // Iniciar temporizador
-     startTimer()
+    // Obtener la velocidad del recorrido desde el campo de entrada
+    var speedInput = document.getElementById('speedInput');
+    var velocidadRecorrido = parseInt(speedInput.value);
+    
+    // Iniciar temporizador
+    startTimer();
     
     // Inicializar las palabras y el recorrido visual
     initializeWords();
-    startVisualRecorrido();
+    startVisualRecorrido(velocidadRecorrido);
 }
 
 function initializeWords() {
@@ -74,7 +80,8 @@ function displayWords() {
     }
 }
 
-function startVisualRecorrido() {
+function startVisualRecorrido(velocidadRecorrido) {
+    clearInterval(visualInterval);
     var columns = document.querySelectorAll('.column p');
     var currentColumnIndex = 0;
     var currentRowIndex = 0;
@@ -104,6 +111,8 @@ function startVisualRecorrido() {
                 shuffleWords();
                 // Reiniciar el índice de la palabra resaltada
                 highlightedWordIndex = -1;
+                clearInterval(visualInterval);
+                startVisualRecorrido(velocidadRecorrido); // Reiniciar el recorrido
             }
         }
 
@@ -115,7 +124,7 @@ function startVisualRecorrido() {
            columns[currentWordIndex].style.fontWeight = 'bold'; // Aplicar fuente en negrita
            currentRowIndex++;
         }
-    }, 90); // Velocidad del recorrido (80ms, más lento para facilitar la visualización)
+    }, velocidadRecorrido); // Usar la velocidad del recorrido proporcionada por el usuario
 }
 
 
