@@ -75,3 +75,65 @@ button:hover {
     margin: 10px;
     background-color: #f9f9f9;
 }
+/* Media queries para hacer que el diseño sea responsive */
+
+/* Para tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    #timer {
+        font-size: 20px;
+    }
+
+    .column {
+        width: 45%;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    #timer {
+        font-size: 18px;
+    }
+
+    .column {
+        width: 100%; /* Columnas ocupan todo el ancho en móviles */
+    }
+
+    .container-input-button input {
+        width: 60px;
+    }
+
+    .container-input-button button {
+        width: 80px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
