@@ -109,7 +109,7 @@ button:hover {
         max-width: 100%;
         padding: 10px;
         margin: 10px auto;
-        transform: scale(0.8); /* Hace más pequeña toda la sección */
+        transform: scale(0.6); /* Hace más pequeña toda la sección */
     }
 
     h1 {
@@ -131,7 +131,7 @@ button:hover {
     }
 
     .container-input-button {
-        transform: scale(0.7); /* Reducir todo el formulario */
+        transform: scale(0.8); /* Reducir todo el formulario */
         margin-top: 10px;
     }
 
